@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f7e3553b98.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Turizo Travel</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="encabezadoycarrito">
+            <div class="logotitulo">
+                <i class="logo fa-solid fa-spa fa-3x"></i><h1>Turizo Travel</h1>
+            </div>
+          <div id="carrito" onmouseover="showCart(this)" class="cart">
+              <button >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <span class="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger count-service">
+                    0
+                    <span class="visually-hidden"></span>
+                  </span>
+              </button>
+          </div>
+          <!--modalcito-->
+          <div class="cart-products" id="products-id">
+            <p class="close-btn" onclick="closeBtn()">X</p>
+            <h3>Tu compra</h3>
+            <div class="card-items">
+            </div>
+            <h3>Total: $<strong class="price-total"></strong></h3>
+        </div>
+
+        <!---->
+
+
+
+
+
+
+        <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <!-- <a class="navbar-brand" href="#">Turizo Travel</a> -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#tarjetastours">Tours</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#contactForm">Contact</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Buscar"
+                  aria-label="Buscar"
+                />
+                <button class="btn btn-outline-primary" type="submit">
+                  Buscar
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section id="bannerPrincipal" class="container row">
+        <div class="container-lg">
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2500">
+                <img
+                  src="https://imagenesnoticias.canalrcn.com/ImgNoticias/Santa%20marta.jpg?VersionId=foN5u_LZfme1Uo_6d2tLA4IIa8d82h24"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2500">
+                <img
+                  src="https://www.colombiatudestino.com/viajes/wp-content/uploads/2018/03/5.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2500">
+                <img
+                  src="https://media.istockphoto.com/photos/clock-tower-gate-picture-id466497932?k=20&m=466497932&s=612x612&w=0&h=TvafxlWl3VPhjhnAkbwBZ80umBOAimGCQIpNB4VsliI="
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="tarjetastours" class="container row">
+        <div class="container row" id="tarjetastourscontent">
+          <div class="card" style="width: 18.5rem" id="santamarta">
+            <div>
+            <img
+              src="https://cdn.colombia.com/images/v2/turismo/sitios-turisticos/santa-marta/Ciudad-de-Santa-Marta-800.jpg"
+              class="card-img-top img-fluid rounded"
+              alt="..."
+            />
+        </div>
+            <div class="card-body">
+              <h5 class="card-title">Santa Marta</h5>
+              <p class="card-text">
+                Entre el mar y la Sierra Nevada, entre lo ancestral y lo moderno, está Santa Marta y sus playas blancas. El parque tayrona, el Rodadero y la Bahía, te esperan para vivir un día de escape que incluye:
+                <ul class="card-text queincluye">
+                    <li>Transporte ida y vuelta en bus climatizado último modelo desde Valledupar</li>
+                    <li>Refrigerio de Sandwich de jamon, queso y vegetales o vegetariano, fruta y jugo natural.</li>
+                    <li>Sector de playa para la excursión</li>
+                    <li>Reserva en Restaurante</li>
+                    <li>City tour</li>
+                </ul> 
+                <p>Precio: <span class="precio">130000</span> por persona</p>
+              </p>
+              <a href="#" class="btn btn-primary rounded agregarCarrito" data-id="1">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18.5rem" id="cartagena">
+            <div>
+                
+                <img
+                src="https://cdn.colombia.com/images/v2/turismo/sitios-turisticos/cartagena/ciudad-cartagena-800.jpg"
+                class="card-img-top img-fluid urlImagen"
+                alt="..."
+                />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Cartagena</h5>
+              <p class="card-text">
+                Entre palmeras, murallas, calles coloniales, historia y gastronomía, Cartagena de Indias, la ciudad turística de Colombia y sus playas de azul infinito te esperan para vivir un día de escape que incluye:
+                <ul class="card-text queincluye">
+                    <li>Transporte ida y vuelta en bus climatizado último modelo desde Valledupar</li>
+                    <li>Refrigerio de Sandwich de jamon, queso y vegetales o vegetariano, fruta y jugo natural.</li>
+                    <li>Sector de playa para la excursión</li>
+                    <li>Reserva en Restaurante</li>
+                    <li>City tour</li>
+                </ul> 
+                <p>Precio: <span class="precio">150000</span> por persona</p>
+              </p>
+              <a href="#" class="btn btn-primary rounded agregarCarrito" data-id="2">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18.5rem" id="cabodelavela">
+            <div>
+                
+                <img
+                src="https://www.colombiatudestino.com/viajes/wp-content/uploads/2018/03/guajira.jpg"
+                class="card-img-top img-fluid"
+                alt="..."
+                />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">El Cabo de la Vela</h5>
+              <p class="card-text">
+                Arriba, en el comienzo de Suramérica, entre el mar y el desierto, ¡qué contraste de encanto! Este lugar no necesita descripción, créenos. Sus playas te esperan para vivir un día de escape que incluye:
+                <ul class="card-text queincluye">
+                    <li>Transporte ida y vuelta en bus climatizado último modelo desde Valledupar</li>
+                    <li>Refrigerio de Sandwich de jamon, queso y vegetales o vegetariano, fruta y jugo natural.</li>
+                    <li>Sector de playa para la excursión</li>
+                    <li>Reserva en Restaurante</li>
+                    <li>City tour</li>
+                </ul> 
+                <p>Precio: <span class="precio">130000</span> por persona</p>
+              </p>
+              <a href="#" class="btn btn-primary rounded agregarCarrito" data-id="3">Agregar al carrito</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18.5rem" id="palomino">
+            <div>
+                
+                <img
+                src="https://img.lalr.co/cms/2018/11/23211225/Palomino-Colombia.jpg?size=xl&ratio=r40_21"
+                class="card-img-top img-fluid"
+                alt="..."
+                />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Palomino</h5>
+              <p class="card-text">
+                Un descrubrimiento que pocos han conocido. Palomino es testigo del beso entre el río y el mar, es un lugar ideal para surfear y desconectarte, sus playas vírgenes te esperan para vivir un día de escape que incluye:
+                <ul class="card-text queincluye">
+                    <li>Transporte ida y vuelta en bus climatizado último modelo desde Valledupar</li>
+                    <li>Refrigerio de Sandwich de jamon, queso y vegetales o vegetariano, fruta y jugo natural.</li>
+                    <li>Sector de playa para la excursión</li>
+                    <li>Reserva en Restaurante</li>
+                    <li>City tour</li>
+                </ul> 
+                <p>Precio: <span class="precio">130000</span> por persona</p>
+              </p>
+              <a href="#" class="btn btn-primary rounded agregarCarrito" data-id="4">Agregar al carrito</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="row formyaside">
+        <form id="contactForm" class="col col-lg-6">
+          <legend>¿Tiene alguna pregunta?</legend>
+          <br />
+          <p>
+            Envíe sus comentarios en este formulario y le responderemos con
+            prontitud
+          </p>
+          <br />
+          <div class="mb-3">
+            <label for="inputName" class="form-label"
+              >Nombres y apellidos</label
+            >
+            <input type="text" class="form-control" id="inputName" />
+          </div>
+          <div class="mb-3">
+            <label for="InputEmail" class="form-label"
+              >Correo electrónico</label
+            >
+            <input type="email" class="form-control" id="InputEmail" />
+          </div>
+          <div class="mb-3">
+            <label for="InputTelephone" class="form-label">Teléfono</label>
+            <input type="telephone" class="form-control" id="InputTelephone" />
+          </div>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Deje su comentario aquí"
+              id="floatingTextarea2"
+              style="height: 100px"
+            ></textarea>
+            <label for="floatingTextarea2">Comentarios</label>
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Autorizo el tratamiento de mis datos según la ley
+              Colombiana</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <aside id="containercuotes" class="col col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                  Nuestros viajeros dicen:
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>Han sido días de descanso, relajación con excelente servicio. No he tenido que preocuparme de nada</p>
+                    <footer class="blockquote-footer">Erika Sarmiento. <cite title="Source Title">Valledupar</cite></footer>
+                  </blockquote>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>Son muy puntuales, los tours han salido a la hora acordada, los refrigerios y la atención siempre fue especial.</p>
+                      <footer class="blockquote-footer">Santiago Lopez. <cite title="Source Title">Barranquilla</cite></footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>Siempre hubo sol, playa, comidas y bebidas, todo lo que quería y esperaba. Los buses son de primera. Siempre puntuales. Recomendado.</p>
+                      <footer class="blockquote-footer">Lorena Amador. <cite title="Source Title">Bogotá</cite></footer>
+                    </blockquote>
+                  </div>
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>Cada que quiero y puedo, me voy de escapada a Santa Marta o Cartagena con esta agencia. El servicio siempre es de primera calidad. Lo recomiendo mucho. Los precios son cómodos. Ante todo la seguridad y comodidad.</p>
+                      <footer class="blockquote-footer">Camilo Alonso. <cite title="Source Title">San Juan del Cesar.</cite></footer>
+                    </blockquote>
+                  </div>
+              </div>
+        </aside>
+      </section>
+
+      <footer class="text-center text-lg-start bg-light text-muted">
+        <section class="containerfooter">
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="logo fa-solid fa-spa fa-3x"></i> Turizo Travel
+                </h6>
+                <p>
+                  Las mejores escapadas en el Caribe colombiano. Vive una
+                  aventura, descansa, relájate, vive.
+                </p>
+              </div>
+
+              <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Tours</h6>
+                <p>
+                  <a href="#tarjetastours" class="text-reset">Santa Marta</a>
+                </p>
+                <p>
+                  <a href="#tarjetastours" class="text-reset">Cartagena</a>
+                </p>
+                <p>
+                  <a href="#tarjetastours" class="text-reset">La Guajira</a>
+                </p>
+              </div>
+
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Contáctanos</h6>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  sergioTurizo@sergio.com
+                </p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  Hecho con 😍 en Colombia
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+      <!-- Footer -->
+    </div>
+    <script src="index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
